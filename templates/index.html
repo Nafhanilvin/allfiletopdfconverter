@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office to PDF Converter - Free Excel & PowerPoint to PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Office to PDF Converter</h1>
+            <p class="subtitle">Convert Excel & PowerPoint files to PDF instantly - 100% Free</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-icon">📁</div>
+                    <h2>Drop your file here</h2>
+                    <p>or</p>
+                    <label for="fileInput" class="btn-primary">Choose File</label>
+                    <input type="file" id="fileInput" accept=".xlsx,.xls,.xlsm,.pptx,.ppt" hidden>
+                    <p class="file-info">Supported: Excel (.xlsx, .xls, .xlsm) & PowerPoint (.pptx, .ppt) - Max 16MB</p>
+                </div>
+
+                <div class="selected-file" id="selectedFile" style="display: none;">
+                    <div class="file-details">
+                        <span class="file-icon">📄</span>
+                        <div class="file-name-container">
+                            <span class="file-name" id="fileName"></span>
+                            <span class="file-size" id="fileSize"></span>
+                        </div>
+                        <button class="btn-remove" id="removeFile">✕</button>
+                    </div>
+                    <button class="btn-convert" id="convertBtn">Convert to PDF</button>
+                </div>
+
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Converting your file...</p>
+                </div>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Conversion Successful!</h3>
+                    <p>Your PDF has been downloaded.</p>
+                    <button class="btn-secondary" id="convertAnother">Convert Another File</button>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <div class="error-icon">⚠</div>
+                    <h3>Conversion Failed</h3>
+                    <p id="errorText"></p>
+                    <button class="btn-secondary" id="tryAgain">Try Again</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure</h3>
+                    <p>Files are processed securely and not stored</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast</h3>
+                    <p>Quick conversion in seconds</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💯</div>
+                    <h3>Free</h3>
+                    <p>Completely free, no limits</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Excel to PDF Converter. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
